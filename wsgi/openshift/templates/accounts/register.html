@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+        <style>
+         
+        </style>
+        {% block content %}
+<link href="{{ STATIC_URL }}css/facebook.css" type="text/css" rel="stylesheet" media="all" />
+ 
+
+ 
+
+OR
+<form action="./" method="post">
+    {% csrf_token %}
+    {% for field in userform %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}: {{ field }}
+        </div>
+    {% endfor %}
+    <button class="btn btn-primary" type="submit" value="Registe User">Register User</button>
+</form>
+
+
+        {% endblock %}
